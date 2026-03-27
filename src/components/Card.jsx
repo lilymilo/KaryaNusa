@@ -1,15 +1,10 @@
-function Card({ children, className = '', hover = true }) {
+function Card({ title, description }) {
   return (
-    <div
-      className={`
-        bg-gray-900 border border-gray-800 rounded-2xl p-5
-        ${hover ? 'hover:border-cyan-500/40 hover:shadow-lg transition-all duration-300' : ''}
-        ${className}
-      `}
-    >
-      {children}  {/* apapun yang ditulis di antara <Card>...</Card> */}
+    <div>
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   );
 }
- 
+
 export default Card;
