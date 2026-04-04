@@ -3,7 +3,7 @@ import { supabase } from '../config/supabaseClient.js';
 export const register = async (req, res) => {
   const { email, password, full_name, shop_name, role } = req.body;
 
-  // 1. Supabase auth system
+  // 1. Sistem auth supabase
   const { data: authData, error: authError } = await supabase.auth.signUp({
     email,
     password,
@@ -11,7 +11,7 @@ export const register = async (req, res) => {
 
   if (authError) return res.status(400).json({ error: authError.message });
 
-  // 2. Jika sukses, ambil ID-nya dan masukkan ke tabel 'profiles' yang tadi kamu buat
+  // 2. Jika berhaasil, ambil ID-nya dan masukkan ke tabel profiles
   if (authData.user) {
     const { error: profileError } = await supabase
       .from('profiles')

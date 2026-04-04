@@ -1,8 +1,8 @@
-# Dependency folders (sangat berat, jangan diupload)
+# Dependency folders
 node_modules/
 jspm_packages/
 
-# Environment variables (DATA RAHASIA SUPABASE KAMU!)
+# Environment variables
 .env
 .env.local
 .env.development.local
@@ -16,16 +16,16 @@ yarn-error.log*
 logs
 *.log
 
-# OS Metadata (sampah dari sistem operasi)
+# OS Metadata
 .DS_Store
 Thumbs.db
 
-# IDE/Editor (konfigurasi pribadi VS Code kamu)
+# IDE/Editor
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# Build folders (jika nanti pakai frontend seperti React/Vite)
+# Build folders
 dist/
 build/

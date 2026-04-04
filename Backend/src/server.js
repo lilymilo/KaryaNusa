@@ -8,7 +8,6 @@ const app = express();
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 
-// Gunakan route produk
 app.use('/api/products', productRoutes);
 
 const PORT = process.env.PORT || 5000;

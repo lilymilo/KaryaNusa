@@ -1,8 +1,7 @@
 import { supabase } from '../config/supabaseClient.js';
 
 export const protect = async (req, res, next) => {
-  // 1. Ambil token dari header 'Authorization'
-  // Formatnya biasanya: "Bearer <token_panjang_banget>"
+  //Ambil token dari header 'Authorization'
   const authHeader = req.headers.authorization;
   const token = authHeader && authHeader.split(' ')[1];
 
@@ -13,14 +12,14 @@ export const protect = async (req, res, next) => {
   }
 
   try {
-    // 2. Verifikasi token ke Supabase Auth
+    //Verifikasi token ke Supabase Auth
     const { data: { user }, error } = await supabase.auth.getUser(token);
 
     if (error || !user) {
       return res.status(401).json({ error: 'Token tidak valid atau sudah expired.' });
     }
 
-    // 3. (OPSIONAL) Cek apakah user adalah 'seller' di tabel profiles
+    //cek role user
     const { data: profile, error: profileError } = await supabase
       .from('profiles')
       .select('role')
@@ -33,7 +32,6 @@ export const protect = async (req, res, next) => {
       });
     }
 
-    // 4. Jika semua oke, simpan data user ke req dan lanjut ke controller
     req.user = user;
     next();
     
