@@ -25,5 +25,5 @@ KaryaNusa adalah platform marketplace digital yang berfokus pada pemberdayaan pr
 
 **Clone Repository**
    ```bash
-   git clone [https://github.com/username-kamu/nama-repo.git](https://github.com/username-kamu/nama-repo.git)
+   git clone [git@github.com:lilymilo/KaryaNusa.git]
    cd nama-repo
