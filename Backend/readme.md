@@ -21,7 +21,7 @@ KaryaNusa adalah platform marketplace digital yang berfokus pada pemberdayaan pr
 
 ---
 
-## Persiapan Instalasi
+## Instalasi
 
 **Clone Repository**
    ```bash
